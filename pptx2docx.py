@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
 from pptx import Presentation
 from docx import Document
 from docx.oxml.ns import qn
-from Ui_p2d import Ui_MainWindow
+from Ui import Ui_MainWindow
 
 
 class MyMainWindow(QMainWindow, Ui_MainWindow):
