@@ -1,4 +1,4 @@
- ![pptx2docx](C:\Users\liufe\Desktop\pptx2docx.png)
+ ![pptx2docx](https://github.com/liufeiyafly/pptx2docx/blob/master/image/pptx2docx.png)
 
 # pptx2docx
 
