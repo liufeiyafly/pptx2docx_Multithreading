@@ -134,7 +134,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "PPTX - 统计字数"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "PPTX To DOCX"))
         self.pushButton.setText(_translate("MainWindow", "开始"))
         self.label.setText(_translate("MainWindow", "作者：萌萌的小维尼"))
         self.label_2.setText(_translate("MainWindow", "仅支持pptx格式 | version :1.0.1"))
