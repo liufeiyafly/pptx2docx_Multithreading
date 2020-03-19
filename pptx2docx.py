@@ -1,3 +1,4 @@
+#！/usr//bin/env python3
 # -*- coding: utf-8 -*-
 # @Time    : 2020/1/8 10:39
 # @Author  : liufeiyafly
@@ -67,14 +68,30 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
 
     def get_path_lists(self):
         text = self.textEdit.toPlainText().strip()
+        files_list = []
         if 'file:///' in text:  # 说明是拖进去的，
-            self.sum_files = len(text.split('file:///'))
-            files_list = set([f for f in text.split('file:///') if
-                              f and os.path.isfile(f) and os.path.getsize(f) > 0])  # set去重。 判断文件存在且大小不为0
-        else:  # 说明是选择的文件
+            self.sum_files = len(text.split('file:///'))-1
+            for f in text.split('file:///'):
+                if os.path.isfile(f) and os.path.getsize(f) > 0:
+                    files_list.append(f)
+                else: # 解决文件名含有 '\xa0' 作为空格的文件。
+                    f = os.path.join(os.path.dirname(f), os.path.basename(f).replace(' ', '\xa0'))
+                    if os.path.isfile(f) and os.path.getsize(f) > 0:
+                        files_list.append(f)
+            # files_list = set([f for f in text.split('file:///') if
+            # f and os.path.isfile(f) and os.path.getsize(f) > 0])  # set去重。 判断文件存在且大小不为0
+        else:  # 否则说明是选择的文件
             self.sum_files = len(text.split('\n'))
-            files_list = set([f for f in text.split('\n') if f and os.path.isfile(f) and os.path.getsize(f) > 0])
-        return files_list
+            for f in text.split('\n'):
+                if os.path.isfile(f) and os.path.getsize(f) > 0:
+                    files_list.append(f)
+                else: # 解决文件名含有 '\xa0' 作为空格的文件。
+                    f=os.path.join(os.path.dirname(f),os.path.basename(f).replace(' ','\xa0'))
+                    if os.path.isfile(f) and os.path.getsize(f) > 0:
+                        files_list.append(f)
+            # files_list = set([f for f in text.split('\n') if f and os.path.isfile(f) and os.path.getsize(f) > 0])
+
+        return set(files_list)
 
     def pptx2docx(self, fileName):  # fileName是“一个”pptx的路径
         auto_object = '<class \'pptx.shapes.autoshape.Shape\'>'
@@ -157,6 +174,8 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         start_time = time.perf_counter()
         total_Chinese_Words, total_English_Words = self.main(file_lists)  # 主要花费时间在这执行步骤
         self.textBrowser2.append('总中文字符和朝鲜语单词:{}，总非中文单词:{}'.format(total_Chinese_Words, total_English_Words))
+        if self.sum_files_actual!= self.sum_files:
+            self.textBrowser2.append('\n可能包含文件大小为0的文件！')
         total_time = time.perf_counter() - start_time
         self.setWindowTitle('耗时：{:.2f}s'.format(total_time))  # 结束时 标题头 展示耗时。
 
@@ -167,6 +186,3 @@ if __name__ == '__main__':
     win = MyMainWindow()
     win.show()
     sys.exit(app.exec_())
-
-
-

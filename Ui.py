@@ -1,4 +1,9 @@
-# -*- coding: utf-8 -*-
+#！/usr//bin/env python3
+#-*- coding:utf-8 -*-
+'''
+@Author: wayne
+@Time: 2020/3/17 0017 下午 4:11
+'''
 
 # Form implementation generated from reading ui file 'wayne_new.ui'
 #
@@ -148,7 +153,6 @@ class Ui_MainWindow(object):
 "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1.打开文件(可多个)</p>\n" #
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2.支持拖拽单/多个文件到最上的控件内</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">！文件若不能转换,可能文件名包含不能识别的空格,请将其删除重试。</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">文件夹名不要有空格~</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">注：生成Docx文件保存到源文件所在位置。</p></body></html>"))
-
