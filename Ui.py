@@ -1,5 +1,5 @@
-#！/usr//bin/env python3
-#-*- coding:utf-8 -*-
+# ！/usr//bin/env python3
+# -*- coding:utf-8 -*-
 '''
 @Author: wayne
 @Time: 2020/3/17 0017 下午 4:11
@@ -13,8 +13,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import  QCheckBox
-
+from PyQt5.QtWidgets import QCheckBox
 
 
 class Ui_MainWindow(object):
@@ -29,7 +28,7 @@ class Ui_MainWindow(object):
         MainWindow.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("宋体")
-        font.setPointSize(9) # 编辑框textEdit里面的文字大小
+        font.setPointSize(9)  # 编辑框textEdit里面的文字大小
         MainWindow.setFont(font)
         MainWindow.setMouseTracking(False)
         MainWindow.setAcceptDrops(False)
@@ -81,7 +80,7 @@ class Ui_MainWindow(object):
         # self.textEdit.setGeometry(QtCore.QRect(10, 10, 281, 91))
         self.textEdit.setObjectName("textEdit")
 
-        #修改
+        # 修改
         font = QtGui.QFont()
         font.setFamily("宋体")
         self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
@@ -92,11 +91,11 @@ class Ui_MainWindow(object):
         self.textBrowser2 = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser2.setObjectName("textBrowser2")
 
-        self.webtext=QtWidgets.QTextEdit(self.centralwidget)
+        self.webtext = QtWidgets.QTextEdit(self.centralwidget)
         self.webtext.setText("https://blog.csdn.net/wayne1000/article/details/104376239")
-        self.weblabel=QtWidgets.QLabel(self.centralwidget)
+        self.weblabel = QtWidgets.QLabel(self.centralwidget)
         self.weblabel.setText("ppt批量转pptx懒人教程：")
-        #大小
+        # 大小
         self.textEdit.setGeometry(QtCore.QRect(10, 10, 300, 90))  # 文件信息
         self.line.setGeometry(QtCore.QRect(10, 340, 478, 16))  # 线
         self.textBrowser.setGeometry(QtCore.QRect(10, 110, 300, 38))  # 结果
@@ -107,21 +106,20 @@ class Ui_MainWindow(object):
 
         self.label_3.setGeometry(QtCore.QRect(10, 270, 500, 70))  # 说明
 
-        self.pushButton.setGeometry(QtCore.QRect(320, 125, 55, 22)) #开始
-        self.pushButton_2.setGeometry(QtCore.QRect(320, 78, 55, 23))# ...
+        self.pushButton.setGeometry(QtCore.QRect(320, 125, 55, 22))  # 开始
+        self.pushButton_2.setGeometry(QtCore.QRect(320, 78, 55, 23))  # ...
 
         self.webtext.setGeometry(QtCore.QRect(10, 421, 470, 30))
         self.weblabel.setGeometry(QtCore.QRect(10, 391, 500, 30))
-        #复选框
-        self.checkbox=QCheckBox('生成.docx文件',self)
+        # 复选框
+        self.checkbox = QCheckBox('生成.docx文件', self)
         self.checkbox.toggle()
-        self.checkbox.setGeometry(QtCore.QRect(321,100,200,23))
+        self.checkbox.setGeometry(QtCore.QRect(321, 100, 200, 23))
         # self.checkbox.move(321,100)
 
         # font = QtGui.QFont()
         # font.setFamily("黑体")
         # self.label
-
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -145,14 +143,15 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "仅支持pptx格式 | version :1.0.1"))
         self.pushButton_2.setText(_translate("MainWindow", "..."))
 
-        #修改
+        # 修改
 
-        self.label_3.setText(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1.打开文件(可多个)</p>\n" #
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2.支持拖拽单/多个文件到最上的控件内</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">文件夹名不要有空格~</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">注：生成Docx文件保存到源文件所在位置。</p></body></html>"))
+        self.label_3.setText(_translate("MainWindow",
+                                        "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                        "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                        "p, li { white-space: pre-wrap; }\n"
+                                        "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+                                        "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1.打开文件(可多个)</p>\n"  #
+                                        "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2.支持拖拽单/多个文件到最上的控件内</p>\n"
+                                        "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">文件夹名不要有空格~</p>\n"
+                                        "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p>\n"
+                                        "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">注：生成Docx文件保存到源文件所在位置。</p></body></html>"))

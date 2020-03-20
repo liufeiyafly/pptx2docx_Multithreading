@@ -1,4 +1,4 @@
-#！/usr//bin/env python3
+# ！/usr//bin/env python3
 # -*- coding: utf-8 -*-
 # @Time    : 2020/1/8 10:39
 # @Author  : liufeiyafly
@@ -31,7 +31,6 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton.clicked.connect(self.start)
         self.textEdit.textChanged.connect(self.pbtn_Enable)
         self.textEdit.textChanged.connect(self.textBrowser2_clear)
-
 
     def textBrowser2_clear(self):
         self.textBrowser2.clear()
@@ -70,11 +69,11 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         text = self.textEdit.toPlainText().strip()
         files_list = []
         if 'file:///' in text:  # 说明是拖进去的，
-            self.sum_files = len(text.split('file:///'))-1
+            self.sum_files = len(text.split('file:///')) - 1
             for f in text.split('file:///'):
                 if os.path.isfile(f) and os.path.getsize(f) > 0:
                     files_list.append(f)
-                else: # 解决文件名含有 '\xa0' 作为空格的文件。
+                else:  # 解决文件名含有 '\xa0' 作为空格的文件。
                     f = os.path.join(os.path.dirname(f), os.path.basename(f).replace(' ', '\xa0'))
                     if os.path.isfile(f) and os.path.getsize(f) > 0:
                         files_list.append(f)
@@ -85,8 +84,8 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
             for f in text.split('\n'):
                 if os.path.isfile(f) and os.path.getsize(f) > 0:
                     files_list.append(f)
-                else: # 解决文件名含有 '\xa0' 作为空格的文件。
-                    f=os.path.join(os.path.dirname(f),os.path.basename(f).replace(' ','\xa0'))
+                else:  # 解决文件名含有 '\xa0' 作为空格的文件。
+                    f = os.path.join(os.path.dirname(f), os.path.basename(f).replace(' ', '\xa0'))
                     if os.path.isfile(f) and os.path.getsize(f) > 0:
                         files_list.append(f)
             # files_list = set([f for f in text.split('\n') if f and os.path.isfile(f) and os.path.getsize(f) > 0])
@@ -174,12 +173,13 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         start_time = time.perf_counter()
         total_Chinese_Words, total_English_Words = self.main(file_lists)  # 主要花费时间在这执行步骤
         self.textBrowser2.append('总中文字符和朝鲜语单词:{}，总非中文单词:{}'.format(total_Chinese_Words, total_English_Words))
-        if self.sum_files_actual!= self.sum_files:
+        if self.sum_files_actual != self.sum_files:
             self.textBrowser2.append('\n可能包含文件大小为0的文件！')
         total_time = time.perf_counter() - start_time
         self.setWindowTitle('耗时：{:.2f}s'.format(total_time))  # 结束时 标题头 展示耗时。
 
         self.pushButton.setEnabled(False)  # 运行完要设定为False,以防重复点击‘开始’按钮
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
