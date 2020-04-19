@@ -1,3 +1,4 @@
+![avatar](./image/pptx2docx.png)
 # pptx2docx_多线程
 
 - 本项目以PyQt5实现GUI界面
