@@ -1,4 +1,5 @@
-![avatar](./image/pptx2docx.png)
+![image](./image/pptx2docx.png)
+![Screenshot](./image/Screenshot.png)
 # pptx2docx_多线程
 
 - 本项目以PyQt5实现GUI界面
@@ -14,7 +15,7 @@
 
 - 且python-pptx库限制pptx内的**SmartArt图形**格式文字的访问，故本项目不能提取（或统计）SmartArt图形的文字，不过大多数PPT还是很少使用SmartArt图形；
 
-- 字数统计结果和Word字数统计结果有稍许差别，还是建议生成Word文件统计字数。Word批量统计字数软件的链接<https://www.lanzous.com/i9o5t5c>;我就不重复造轮子了；
+- 字数统计结果和Word字数统计结果有稍许差别，还是建议生成Word文件统计字数。Word批量统计字数软件的链接<>;我就不重复造轮子了；
 
 - 本项目更新为多线程版本。
 
