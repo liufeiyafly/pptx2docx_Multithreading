@@ -10,7 +10,7 @@
 
 # 说明
 
-- 在Win7 x64、Win10 x64位版本完美运行；
+- 在Win7 x64、Win10 x64位均可运行；
 
 - 由于使用python-pptx库，所以仅支持\*.pptx格式，\*.ppt批量转为\*.pptx软件也内有教程链接：<https://blog.csdn.net/wayne1000/article/details/104376239>；
 
