@@ -1,5 +1,5 @@
 ![image](./image/pptx2docx.png)
-  
+
 ![Screenshot](./image/Screenshot.png)
 # pptx2docx_多线程
 
@@ -22,7 +22,7 @@
 
 # 下载
 
-  https://lanzous.com/ibk3omf
+  https://wwa.lanzoui.com/ibk3omf
 
 
 # 联系
